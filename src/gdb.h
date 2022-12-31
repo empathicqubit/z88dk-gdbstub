@@ -29,8 +29,8 @@
 }
 
 /* These functions must be defined by the application */
-unsigned char gdb_getDebugChar(void);
-void gdb_putDebugChar(unsigned char ch);
+unsigned char gdb_getDebugChar(void) FASTCALL;
+void gdb_putDebugChar(unsigned char ch) FASTCALL;
 
 /* This file contains the library exports. */
 

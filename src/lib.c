@@ -69,10 +69,6 @@ byte _gdb_state[NUMREGBYTES];
 #error "Too small DBG_PACKET_SIZE"
 #endif
 
-#ifndef FASTCALL
-#define FASTCALL __z88dk_fastcall
-#endif
-
 #ifndef DBG_ENTER
 #define DBG_ENTER
 #else

@@ -21,6 +21,10 @@
 #ifndef __GDB_LIB_H__
 #define __GDB_LIB_H__
 
+#ifndef FASTCALL
+#define FASTCALL __z88dk_fastcall
+#endif
+
 typedef unsigned char byte;
 typedef unsigned short word;
 
