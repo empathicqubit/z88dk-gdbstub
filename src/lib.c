@@ -1,7 +1,6 @@
-/* This file contains stuff internal to the library */
-
 /* Debug stub for Z80.
 
+   Copyright (C) 2022 Empathic Qubit.
    Copyright (C) 2021-2022 Free Software Foundation, Inc.
 
    This file is part of GDB.
@@ -18,6 +17,8 @@
 
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+
+/* This file contains stuff internal to the library */
 
 #include "debug.h"
 #include "lib.h"
