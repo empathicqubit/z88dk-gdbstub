@@ -145,7 +145,7 @@ void gdb_set_step_toggle(int (*func)(int set)) {
 }
 #endif
 
-#ifdef DGB_SWBREAK
+#ifdef DBG_SWBREAK
 void gdb_set_swbreak_toggle(int (*func)(int set, void *addr)) {
     _gdb_toggle_swbreak = func;
 }
