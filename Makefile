@@ -45,9 +45,13 @@ $(BUILD)/gdb.lst: | $(BUILD)
 	done
 
 .PRECIOUS: $(BUILD)/%.o
-$(BUILD)/%.o: %.s | $(BUILD)
+$(BUILD)/%.o: $(BUILD)/%.o.asm | $(BUILD)
 	$(call source_compile,-c)
 
-.PRECIOUS: $(BUILD)/%.o
-$(BUILD)/%.o: %.c | $(BUILD)
-	$(call source_compile,-c)
+.PRECIOUS: $(BUILD)/%.o.asm
+$(BUILD)/%.o.asm: %.s | $(BUILD)
+	$(call source_compile,-S)
+
+.PRECIOUS: $(BUILD)/%.o.asm
+$(BUILD)/%.o.asm: %.c | $(BUILD)
+	$(call source_compile,-S)
