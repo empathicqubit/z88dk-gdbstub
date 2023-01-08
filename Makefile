@@ -2,6 +2,7 @@ CFLAGS?=-O3 --opt-code-speed
 PLATFORM?=ti8x
 
 CC=$(shell which zcc z88dk.zcc | head -1)
+AS=$(shell which z88dk-z80asm z88dk.z88dk-z80asm | head -1)
 LD=$(CC)
 SHELL=bash
 
@@ -36,7 +37,7 @@ $(BUILD):
 	@mkdir -p "$@"
 
 $(BUILD)/gdb.lib: $(BUILD)/gdb.lst $(SRC_OBJECT_FILES)
-	cd $(BUILD) && z88dk.z88dk-z80asm -d -xgdb "@$(subst $(BUILD)/,,$<)"
+	cd $(BUILD) && $(AS) -d -xgdb "@$(subst $(BUILD)/,,$<)"
 
 $(BUILD)/gdb.lst: | $(BUILD)
 	echo > "$@"
